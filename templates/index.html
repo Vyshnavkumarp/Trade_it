@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in summary %}
+            <tr>
+                <td>{{ data.symbol }}</td>
+                <td>{{ data.total_shares }}</td>
+                <td>${{ data.price_per_share }}</td>
+                <td>${{ data.total_price_of_shares }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="table-secondary">
+                <td colspan="3" class="text-end"><strong>Cash</strong></td>
+                <td>${{ cash }}</td>
+            </tr>
+            <tr class="table-secondary">
+                <td colspan="3" class="text-end"><strong>TOTAL</strong></td>
+                <td>${{ total }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

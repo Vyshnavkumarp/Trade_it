@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <input autocomplete="on" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Ticker symbol of company" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+    {% if symbol %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <p class="card-text"><strong>Stock Symbol:</strong> {{ symbol }}</p>
+                        <p class="card-text"><strong>Stock Price:</strong> $ {{ price }}</p>
+                        <p class="card-text"><strong>Total Price for {{ shares }} shares:</strong> $ {{ total_price }}</p>
+                        <p class="card-text"><strong>Balance:</strong> $ {{ balance }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
