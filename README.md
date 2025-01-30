@@ -161,11 +161,6 @@ Customize in `app.py`:
 
 ---
 
-## License 📄  
-Distributed under the MIT License. See `LICENSE` for details.  
-
----
-
 ## Acknowledgments 🙏  
 - CS50 for foundational code structure  
 - Yahoo Finance for market data API  
